@@ -16,8 +16,20 @@ $('#search-btn').on('click', function() {
         url: url,
         method: 'GET',
     }).done(function(result) {
+    	// for loop to cycle through number of records
+    	// query automatically returns 10 records, so pick min(recordnumber, 10);
+    	var max = Math.min(recordnumber, 10)
+    	for (var i = 0; i < max - 1; i++) {
+    		// result.data[i]
+    		// add data from response to Page container
+    	}
+    		
         console.log(result);
     }).fail(function(err) {
         throw err;
     });
+})
+
+$('#reset-btn').on('click', function() {
+	// reset
 })
